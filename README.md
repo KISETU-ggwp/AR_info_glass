@@ -8,7 +8,7 @@ XREAL社が公開している”NR SDK”に対応した字幕の位置制御ス
 注意点として、Ｚ座標は有効にしていないためＸとＹの座標方向のみ移動が可能になっています。
 
 なお、アタッチ先は[NRVirtualDisplayer/VirtualController]にAdd Componentしてください。確か、それでいいはずです。一つ気を付けることとして
-Object Holderの登録がとても重要です。
+Object Holderの登録が重要です。
 
 [NRInput/Right/controllerTracker/LaserRaycastor/Reticle]の中にObjectHolderという名前のGameObjectを新規作成してはめてください。新規作成するとデフォルトで
 TransformがあるのでそれをAdd Componentしたところの”Object Holder”にはめてください。
