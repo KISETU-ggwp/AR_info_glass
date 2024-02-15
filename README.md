@@ -12,8 +12,7 @@ XREAL社が公開している”NR SDK”に対応した字幕の位置制御ス
 
 注意点として、Ｚ座標は有効にしていないためＸとＹの座標方向のみ移動が可能になっています。
 
-なお、アタッチ先は[NRVirtualDisplayer/VirtualController]にAdd Componentしてください。確か、それでいいはずです。一つ気を付けることとして
-Object Holderの登録が重要です。
+なお、アタッチ先は[NRVirtualDisplayer/VirtualController]にAdd Componentしてください。確か、それでいいはずです。一つ気を付けることとしてObject Holderの登録が重要です。
 
 [NRInput/Right/controllerTracker/LaserRaycastor/Reticle]の中にObjectHolderという名前のGameObjectを新規作成してはめてください。新規作成するとデフォルトで
 TransformがあるのでそれをAdd Componentしたところの”Object Holder”にはめてください。
@@ -25,9 +24,23 @@ TransformがあるのでそれをAdd Componentしたところの”Object Holder
   1. Runtimeを選択
   2. Add Componentしたオブジェクトをはめる
   3. Drag_And_Drop2を選択して、HandleButtonを選択
-  4. Done
+4. Done
 
 
+## Srt2.cs
+
+UnityのText(TMP)に対応した字幕出力を達成するスクリプトになります。srt形式ファイルに対応しており、タイムスタンプを基に字幕を更新するようになっています。
+アタッチ先は、字幕を提示したいText(TMP)の中にしてください。これについては、GameObjectをText(TMP)内に新規作成してそこにアタッチしておくといいでしょう。
+なお、複数の字幕ファイルに対応しているため一度に複数の字幕ファイルのいずれかを選択して字幕の出力を達成することができるので結構おすすめです。
+今回の字幕ファイルの保存ディレクトリは[Assets/StreamingAssets]に入れてあることを想定してコードを作成していますのでその点ご注意ください。
+コード作成者が、修正するとすれば、srt形式ファイルの名前をコード内で変更するだけだと思われます。今回であれば3つのsrt形式ファイルを想定していますのでButtonは３つ必要になりますのでそのあたりは調整してください。増やしたければ
+[Path.Combine(Application.streamingAssetsPath, "xxx.srt"),]を追加しておけばいいでしょう。
+
+## 最後に
+なにか、このコードが役立つことを祈っております。なお、これらのコードはXREALコミュニティのアドバイスを基に自分でコードを作成したものになります。
+なにか疑問点があれば *issue* にご投稿ください。
+
+*それでは、よいUnity開発ライフを！！*
 
 
 
